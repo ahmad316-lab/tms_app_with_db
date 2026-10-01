@@ -1,12 +1,10 @@
-from fastapi import FastAPI, Request, status
+from fastapi import Request, status
 from fastapi.responses import JSONResponse
-
-app = FastAPI()
 
 class TaskNotFound(Exception):
     pass
 
-app.exception_handler(TaskNotFound)
+
 async def task_not_found(
         request: Request,
         exc: TaskNotFound
